@@ -6,7 +6,7 @@ class mysqlHadler:
         conn = pymysql.connect(
             host="localhost",
             user="root",
-            passwd="liudebin-1990",
+            passwd="Ldb-20200507",
             charset="utf8",
             use_unicode=False
         )

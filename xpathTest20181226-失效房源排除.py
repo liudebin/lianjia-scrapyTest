@@ -827,18 +827,18 @@ with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElemen
 """
 response = etree.HTML(wb_data)
 for quote in response.xpath('//div[@class="content__list--item"]'):
-    print getList(quote.xpath('.//div/p[@class="content__list--item--title twoline"]/a/text()'))
-    print getList(quote.xpath('.//div/p[@class="content__list--item--title twoline"]/a/@href'))
+    print(getList(quote.xpath('.//div/p[@class="content__list--item--title twoline"]/a/text()')))
+    print(getList(quote.xpath('.//div/p[@class="content__list--item--title twoline"]/a/@href')))
 
-    print getList(quote.xpath('.//div/p[@class="content__list--item--des"]/a[position()=1]/@href'))
-    print getList(quote.xpath('.//div/p[@class="content__list--item--des"]/a[position()=1]/text()'))
-    print getList(quote.xpath('.//div/p[@class="content__list--item--des"]/a[position()=2]/@href'))
-    print getList(quote.xpath('.//div/p[@class="content__list--item--des"]/a[position()=2]/text()'))
+    print(getList(quote.xpath('.//div/p[@class="content__list--item--des"]/a[position()=1]/@href')))
+    print(getList(quote.xpath('.//div/p[@class="content__list--item--des"]/a[position()=1]/text()')))
+    print(getList(quote.xpath('.//div/p[@class="content__list--item--des"]/a[position()=2]/@href')))
+    print(getList(quote.xpath('.//div/p[@class="content__list--item--des"]/a[position()=2]/text()')))
 
-    print "***************************************************"
+    print("***************************************************")
 
 
 
-# print "/zufang/SH2136750194585780224.html"[8:-5]
+print("/zufang/SH2136750194585780224.html"[8:-5])
 
 

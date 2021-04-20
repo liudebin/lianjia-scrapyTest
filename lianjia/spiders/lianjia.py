@@ -7,7 +7,7 @@ baseUrl = 'https://sh.lianjia.com'
 
 
 def getList(a):
-    print a
+    print(a)
     if a:
         if a[0].extract().isdigit():
             return a[0].extract()
@@ -52,10 +52,10 @@ class ToScrapeSpiderXPath(scrapy.Spider):
     # start_urls = box
 
     def parse(self, response):
-        print response
+        print(response)
         for quote in response.xpath('//div[@class="content__list--item"]'):
             price = int(quote.xpath('.//span[@class="content__list--item-price"]/em/text()')[0].extract())
-            # print quote
+            # print(quote)
             yield {
                 'title': getList(quote.xpath('.//div/p[@class="content__list--item--title twoline"]/a/text()')),
                 'link': baseUrl + getList(quote.xpath('.//div/p[@class="content__list--item--title twoline"]/a/@href')),

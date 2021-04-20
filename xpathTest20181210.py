@@ -119,7 +119,7 @@ var LjUserTrack = {
     _start_time: +new Date,
     logDatas: [],
     __sendData: function(id, data) {
-        if(id && (typeof(data) == 'object')){
+        if(id && (typeof(data) == 'object'))){
           data.pid = (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid)||"lianjiaweb";
           data.key = window.location.href;
           window.$ULOG && $ULOG.send(id, data);
@@ -636,30 +636,30 @@ require(['common/initTalk'], function(initTalk) {
 """
 response = etree.HTML(wb_data)
 for quote in response.xpath('//div[@class="info-panel"]'):
-    print getList(quote.xpath('.//h2/a/text()'))
-    print getList(quote.xpath('.//h2/a/@href'))
+    print (getList(quote.xpath('.//h2/a/text()')))
+    print (getList(quote.xpath('.//h2/a/@href')))
 
-    print getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/a/@href'))
-    print getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/a/span[@class="region"]/text()'))
-    print getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/span[@class="zone"]/span/text()'))
-    print getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/span[@class="meters"]/text()'))
-    print getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/span[not(@class)]/text()'))
+    print (getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/a/@href')))
+    print (getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/a/span[@class="region"]/text()')))
+    print (getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/span[@class="zone"]/span/text()')))
+    print (getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/span[@class="meters"]/text()')))
+    print (getList(quote.xpath('.//div[@class="col-1"]/div[@class="where"]/span[not(@class)]/text()')))
 
     # other
-    print getList(quote.xpath('.//div[@class="col-1"]/div[@class="other"]/div[@class="con"]/a/@href'))
-    print quote.xpath('.//div[@class="col-1"]/div[@class="other"]/div[@class="con"]')[0].xpath('string(.)')[0].strip()
+    print (getList(quote.xpath('.//div[@class="col-1"]/div[@class="other"]/div[@class="con"]/a/@href')))
+    print (quote.xpath('.//div[@class="col-1"]/div[@class="other"]/div[@class="con"]')[0].xpath('string(.)')[0].strip())
     # chanquan
-    print getList(quote.xpath('.//div[@class="fang-subway-ex"]/span/text()'))
+    print (getList(quote.xpath('.//div[@class="fang-subway-ex"]/span/text()')))
 
     # col-3
 
-    print getList(quote.xpath('.//div[@class="col-3"]/div[@class="price"]/span[@class="num"]/text()'))
-    print getList(quote.xpath('.//div[@class="col-3"]/div[@class="price-pre"]/text()'))
+    print (getList(quote.xpath('.//div[@class="col-3"]/div[@class="price"]/span[@class="num"]/text()')))
+    print (getList(quote.xpath('.//div[@class="col-3"]/div[@class="price-pre"]/text()')))
 
     # col -
 
-    print getList(quote.xpath('.//div[@class="col-2"]/div[@class="square"]/div[not(@class)]/span[@class="num"]/text()')) + "人看房"
+    print (getList(quote.xpath('.//div[@class="col-2"]/div[@class="square"]/div[not(@class)]/span[@class="num"]/text()'))) + "人看房"
 
-    print "***************************************************"
+    print ("***************************************************")
 
 
